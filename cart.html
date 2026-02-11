@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container catalog-header">
+
+        <div class="button-group">
+            <a href="catalog.html" class="feature-button back-btn">
+                <img src="images/back-arrow.png" alt="Назад" class="feature-icon">
+            </a>
+            <a href="index.html" class="feature-button back-btn">
+                <img src="images/home.png" alt="Главная" class="feature-icon">
+            </a>
+        </div>
+
+
+        <div class="logo-group-cart">
+            <img src="images/hex.png" alt="HoneyGear Logo" class="logo-img">
+            <h1 class="logo">Корзина</h1>
+        </div>
+    </div>
+</header>
+
+<section class="cart">
+    <div id="cart-empty" class="cart-empty">
+        <img src="images/empty-cart.png" alt="Картинка корзины" class="empty-cart-img">
+        <h1>Корзина пуста</h1>
+        <p>Добавьте товары из каталога, чтобы оформить заказ</p>
+        <a href="catalog.html" class="btn btn-left">Перейти в каталог</a>
+    </div>
+
+    <div id="cart-items-container">
+        <h2>Ваши товары</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <h3 id="total" class="cart-total"></h3>
+        <button id="checkout-btn" class="btn btn-left">Оформить заказ</button>
+    </div>
+</section>
+
+<script>
+const cartContainer = document.getElementById("cart-items");
+const totalEl = document.getElementById("total");
+const cartItemsContainer = document.getElementById("cart-items-container");
+const cartEmpty = document.getElementById("cart-empty");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function renderCart() {
+    if(cart.length === 0) {
+        cartEmpty.style.display = "flex";
+        cartItemsContainer.style.display = "none";
+        return;
+    } else {
+        cartEmpty.style.display = "none";
+        cartItemsContainer.style.display = "block";
+    }
+
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        cartContainer.innerHTML += `
+            <div class="cart-item">
+                <p class="cart-name">${item.name}</p>
+                <p class="cart-quantity">${item.quantity} шт</p>
+                <p class="cart-price">${item.price * item.quantity} ₸</p>
+                <button class="btn-remove" onclick="removeItem(${index})">Удалить</button>
+            </div>
+        `;
+    });
+
+    totalEl.textContent = "Итого: " + total + " ₸";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
