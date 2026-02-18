@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoneyGear – Заметки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Верхняя панель с кнопками -->
+<header>
+    <div class="header-top">
+        <a href="index.html" class="feature-button">Главная</a>
+        <a onclick="logout()" class="feature-button">Выход</a>
+    </div>
+
+    <div class="header-container">
+        <div class="logo-group">
+            <img src="images/hex.png" alt="HoneyGear Logo" class="logo-img">
+            <h1 class="logo">Honey<span class="logo-gear">Gear</span></h1>
+        </div>
+    </div>
+</header>
+
+<!-- Основной контент -->
+<main class="container notes-container">
+    <h2 class="section-title">Защищённые заметки</h2>
+
+    <textarea id="noteInput" placeholder="Введите текст..."></textarea>
+
+<div class="buttons">
+    <button onclick="saveNote()">Сохранить</button>
+    <button onclick="loadNote()">Загрузить</button>
+
+    <!-- Основное резервное копирование (зашифрованное) -->
+    <button onclick="backupNoteEncrypted()">Резервная копия (зашифр.)</button>
+
+    <!-- Вариант для проверки (расшифрованное) -->
+    <button onclick="backupNoteDecrypted()">Резервная копия (открытая)</button>
+</div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="notes.js"></script>
+</body>
+</html>

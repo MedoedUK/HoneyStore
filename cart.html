@@ -9,6 +9,12 @@
 <body>
 
 <header>
+    <div class="header-top">
+        <a href="login.html" class="feature-button">Вход</a>
+        <a href="notes.html" class="feature-button">Заметки</a>
+        <a onclick="logout()" class="feature-button">Выход</a>
+    </div>
+
     <div class="header-container catalog-header">
 
         <div class="button-group">
@@ -89,6 +95,7 @@ function removeItem(index) {
 
 renderCart();
 </script>
+<script src="auth.js"></script>
 
 </body>
 </html>

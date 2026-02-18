@@ -620,3 +620,159 @@ footer {
     gap: 10px; 
     align-items: center;
 }
+
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.auth-card {
+    background: #181818;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-card h2 {
+    text-align: center;
+}
+
+.auth-card input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background: #0f0f0f;
+    gap: 10px;
+}
+
+.header-top .feature-button {
+    padding: 1px 20px;
+    background: #ffcc33;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+
+.header-top .feature-button:hover {
+    background: #ffb347;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-top: 20px;
+    resize: none;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #ffcc33;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #ffb347;
+}
+
+/* Notes page styling */
+.notes-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notes-container h2.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+}
+
+.notes-container textarea {
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.notes-container .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.notes-container .buttons .btn-left,
+.notes-container .buttons .btn-right {
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.notes-container .buttons .btn-left {
+    background: #ffcc33;
+    border: none;
+    color: #000;
+}
+
+.notes-container .buttons .btn-left:hover {
+    background: #ffb347;
+}
+
+.notes-container .buttons .btn-right {
+    background: #ffcc33;
+    border: none;
+    color: #000;
+}
+
+.notes-container .buttons .btn-right:hover {
+    background: #ffb347;
+}

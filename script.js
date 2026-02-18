@@ -1,3 +1,9 @@
+if (!localStorage.getItem("auth") &&
+    !window.location.pathname.includes("login.html")) {
+    window.location.href = "login.html";
+}
+
+
 //Анимация
 const products = document.querySelectorAll('.product-card');
 
@@ -11,6 +17,7 @@ products.forEach(product => {
 });
 
 ////////////////////////////////////////////////////////////////////////
+
 //Скрипт который добавляет товары в корзину и удаляет
 const buttons = document.querySelectorAll(".add-btn");
 

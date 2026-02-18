@@ -11,6 +11,12 @@
 
 <!-- Панель навигации -->
 <header>
+    <div class="header-top">
+        <a href="login.html" class="feature-button">Вход</a>
+        <a href="notes.html" class="feature-button">Заметки</a>
+        <a onclick="logout()" class="feature-button">Выход</a>
+    </div>
+
     <div class="header-container">
         <div class="logo-group">
             <img src="images/hex.png" alt="HoneyGear Logo" class="logo-img">
@@ -192,5 +198,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="auth.js"></script>
+
 </body>
 </html>
